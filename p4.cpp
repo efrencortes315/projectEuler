@@ -2,11 +2,16 @@
 #include <limits.h>
 #include <string>
 #include <algorithm>
+#include <sstream>
+
 using namespace std;
 bool isPalindrome(int);
 bool isPalindrome(int num){
-	string sNum=std::to_string(num);
-	string rNum= reverse(sNum.begin(),sNum.end());
+	stringstream ss;
+	ss << num;
+	string sNum= ss.str();
+	string rNum= sNum;
+	reverse(rNum.begin(),rNum.end());
 	if(sNum == rNum){
 		return true;
 	}else{
