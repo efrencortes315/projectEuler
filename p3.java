@@ -14,10 +14,9 @@ public class p3{
 		BigInteger f = new BigInteger("600851475143");
 		p3 self = new p3();
 		ArrayList<Integer> nums =self.fileToArrList("primes1.txt");
-		System.out.println(nums.size());
 		for(int i= nums.size()-1;i>=0;i--){
 			BigInteger prime = new BigInteger(nums.get(i).toString());
-			if(f.mod(prime).equals(0)){
+			if(f.mod(prime).equals(BigInteger.ZERO)){
 				System.out.println(prime.toString());
 				break;
 			}
