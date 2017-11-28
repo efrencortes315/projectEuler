@@ -14,6 +14,15 @@ dum+=j;
 return dum;
 
 }
+bool isAmicable(int num){
+int tmp = sumOfDivisors(num);
+int two = sumOfDivisors(tmp);
+if(two==num&& num!=tmp){
+	return true;
+}else{
+return false;
+}
+}
 
 
 
@@ -21,10 +30,9 @@ int main(){
 int total = 0;
 
 for(int i=1;i<10000;i++){
-int sum= sumOfDivisors(i);
-int rev = sumOfDivisors(sum);
-if(sum==rev && sum!=0 && rev!=0){
-total+=sum;
+if(isAmicable(i)){
+total += i;
+cout << i << endl;
 }
 
 }
